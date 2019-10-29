@@ -1219,7 +1219,7 @@ const GhostAdminApi = __webpack_require__(455);
         const exclude = core.getInput('exclude') || '';
 
         // Create a zip
-        await exec.exec(`zip -r ${themeZip} . -x *.git* *.zip yarn* npm* *routes.yaml *redirects.yaml *redirects.json ${exclude}`, [], {cwd: basePath});
+        await exec.exec(`zip -r ${themeZip} ${core.getInput('source')} -x *.git* *.zip yarn* npm* *routes.yaml *redirects.yaml *redirects.json ${exclude}`, [], {cwd: basePath});
 
         // Deploy it to the configured site
         await api.themes.upload({file: zipPath});

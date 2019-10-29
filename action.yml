@@ -13,6 +13,10 @@ inputs:
   exclude:
     description: 'Files or folders to exclude (space-separated list)'
     required: false
+  source:
+    description: 'The directory to work from'
+    required: true
+    default: '.'
 runs:
   using: 'node12'
   main: 'dist/index.js'
