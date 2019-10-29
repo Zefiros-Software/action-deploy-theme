@@ -1222,7 +1222,7 @@ const GhostAdminApi = __webpack_require__(455);
         await exec.exec(`zip -r ${themeZip} . -x *.git* *.zip yarn* npm* *routes.yaml *redirects.yaml *redirects.json ${exclude}`, [], {cwd: basePath});
 
         // Deploy it to the configured site
-        await api.themes.upload({file: zipPath});
+        console.log(await api.themes.upload({file: zipPath}));
         console.log(`${themeZip} successfully uploaded.`);
     } catch (err) {
         console.error(err);
